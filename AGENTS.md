@@ -44,9 +44,18 @@ Docs: https://docs.expo.dev/eas/index.md
 - Não leia nem edite CRITERIOS.md e PESQUISA.md, a menos que eu peça.
 
 ## Contexto desta prova de conceito
-- TCC: Xiz9, uma API REST que detecta imagens geradas por IA combinando uma Camada Inferior, uma Camada Superior (EfficientNet V2S) e uma cascata entre as duas.
+- TCC: Xiz9, uma API REST que detecta imagens geradas por IA utilizando uma rede neural (EfficientNet V2S).
 - Problema: o Xiz9 foi pensado para plataformas parceiras, mas só foi testado por um site; a PoC é um cliente móvel mínimo que envia uma foto à API e exibe o veredito e a confiança, mesmo com análise lenta e conexão que pode falhar.
 - Tecnologia investigada: expo-image-picker e fetch.
 - Uma tela só, em `App.tsx`: o usuário escolhe uma foto, toca em Analisar e vê veredito, confiança e camada.
 - Não usar Expo Router.
 - Fora de escopo: login, design final e tudo que não demonstre a pergunta.
+
+## Funcionamento do Xiz9
+- É uma API em python que utiliza o framework fast api.
+- Ela rodando localmente na porta 8000.
+- Essa API tem apenas um endpoint POST '/Xiz9/analise', no qual recebe um objeto do tipo UploadFile.
+- Essa aplicação só aceita arquivos dos tipos: "image/jpeg", "image/png", "image/webp", "image/gif", "image/bmp", "image/tiff".
+- O endpoint '/Xiz9/analise' devolve um json com dois campos: 1. label: classificação "REAL" ,"IA", ou "INCERTO"; 2. confidence: probabilidade de ser o que foi classificado;
+- Na classificação é utilizado um threshold de 75%, no qual se o campo "confidence" for menor do que 75% (0.75) é classificado como "INCERTO".
+

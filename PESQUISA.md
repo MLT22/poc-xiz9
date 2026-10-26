@@ -2,7 +2,7 @@
 
 ## Contexto do TCC
 
-O TCC é o Xiz9, uma API REST que detecta imagens geradas por IA. A análise combina uma Camada Inferior, uma Camada Superior baseada em EfficientNet V2S e uma cascata entre as duas. O Xiz9 foi pensado para ser consumido por plataformas parceiras, mas até agora só foi testado por um site. Esta prova de conceito é um cliente móvel mínimo, feito em React Native com Expo, para a disciplina de Desenvolvimento de Aplicações Híbridas (trilhas: recursos do aparelho e consumo de API).
+O TCC é o Xiz9, uma API REST que detecta imagens geradas por IA. A análise é realizada utilizando uma rede neural, na qual foi utilizada a arquitetura EfficientNet V2 Small. O Xiz9 foi pensado para ser consumido por plataformas parceiras, mas até agora só foi testado por um site. Esta prova de conceito é um cliente móvel mínimo, feito em React Native com Expo, para a disciplina de Desenvolvimento de Aplicações Híbridas (trilhas: recursos do aparelho e consumo de API).
 
 ## Pergunta de pesquisa
 
