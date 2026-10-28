@@ -47,7 +47,8 @@ Docs: https://docs.expo.dev/eas/index.md
 - TCC: Xiz9, uma API REST que detecta imagens geradas por IA utilizando uma rede neural (EfficientNet V2S).
 - Problema: o Xiz9 foi pensado para plataformas parceiras, mas só foi testado por um site; a PoC é um cliente móvel mínimo que envia uma foto à API e exibe o veredito e a confiança, mesmo com análise lenta e conexão que pode falhar.
 - Tecnologia investigada: expo-image-picker e fetch.
-- Uma tela só, em `App.tsx`: o usuário escolhe uma foto, toca em Analisar e vê veredito, confiança e camada.
+- Uma tela só, em `App.tsx`: o usuário escolhe uma foto, toca em Analisar e vê veredito e confiança.
+- A PoC será rodada em um Android 17.0 ("CinnamonBun") emulado via Android Studio.
 - Não usar Expo Router.
 - Fora de escopo: login, design final e tudo que não demonstre a pergunta.
 

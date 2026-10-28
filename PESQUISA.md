@@ -13,10 +13,22 @@ Como o expo-image-picker e o fetch permitem que um app Expo envie uma foto à AP
 | Opção | Serve para | Decisão |
 | --- | --- | --- |
 | [opção] | [para que serve] | [decisão e motivo] |
+| expo-document-picker | Abre o seletor de arquivos do SO | Decidi não seguir com a utilização dessa biblioteca, pois como essa biblioteca abre o seletor de arquivos e não a galeria ficaria menos prático a utilização |
+| expo-camera | Mostra a câmera | Decidi não utilizar, pois creio que para essa PoC seria melhor ter duas opções ou de selecionar da galeria ou tirar uma foto na hora |
+| expo-image-picker | Abrir a galeria/câmera do sistema | Decidi seguir utilizando essa biblioteca, por conseguir ter acesso tanto a galeria do celular, quanto tirar uma foto na hora |
+| expo/fetch | Fazer requisições | É o metodo que decidi utilizar, por já ser nativo do Android |
+| XMLHttpRequest | Fazer requisições | Maneira inbutida no React Native |
+| axios | Biblioteca externa do javascript para fazer requisição | Por ser uma dependência a mais prefiri não utilizar |
+
 
 ## Fontes oficiais lidas
 
-- [fonte]
+- expo-document-picker: https://docs.expo.dev/versions/v58.0.0/sdk/document-picker/
+- expo-camera: https://docs.expo.dev/versions/v58.0.0/sdk/camera/
+- expo-image-picker: https://docs.expo.dev/versions/v58.0.0/sdk/imagepicker/
+- expo/fetch: https://docs.expo.dev/versions/v58.0.0/sdk/expo/#expofetch-api
+- XMLHttpRequest: https://reactnative.dev/docs/network
+- axios: https://github.com/axios/axios 
 
 ## Onde a IA errou
 
