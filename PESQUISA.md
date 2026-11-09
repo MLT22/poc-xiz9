@@ -28,12 +28,11 @@ Mesmo prompt enviado a duas ferramentas: Claude Code e Github copilot.
 
 | Opção | Serve para | Funciona no Expo Go? | Decisão |
 | --- | --- | --- | --- |
-| expo-image-picker | Abrir a galeria ou a câmera do sistema | [confirmar na página: "Included in Expo Go"] | **Escolhida.** Dá acesso à galeria e permite tirar uma foto na hora, com uma única biblioteca. |
-| expo-camera | Mostrar a câmera dentro do app | [confirmar na página] | Descartada. Exigiria montar a interface da câmera e, ainda assim, não abre a galeria. O image-picker já cobre os dois casos. |
-| expo-document-picker | Abrir o seletor de arquivos do sistema | [confirmar na página] | Descartada. Abre o gerenciador de arquivos, não a galeria, o que é menos prático para escolher fotos. |
-| fetch global / expo/fetch | Fazer requisições HTTP | Sim, vem no pacote `expo` | **Escolhida.** É a implementação de fetch do próprio Expo (compatível com WinterCG) e, nas SDKs recentes, também é o `fetch` global no Android e no iOS. Não exige dependência extra. SDK usada neste projeto: [versão do package.json]. |
-| XMLHttpRequest | Fazer requisições HTTP | Sim, embutida no React Native | Descartada. [motivo, depois de ler a página: reactnative.dev/docs/network] |
-| axios | Biblioteca externa para requisições | [confirmar] | Descartada. Seria uma dependência a mais sem benefício para uma única requisição. |
+| expo-image-picker | Abrir a galeria ou a câmera do sistema | Sim | **Escolhida.** Dá acesso à galeria e permite tirar uma foto na hora, com uma única biblioteca. |
+| expo-camera | Mostrar a câmera dentro do app | Sim | Descartada. Exigiria montar a interface da câmera e, ainda assim, não abre a galeria. O image-picker já cobre os dois casos. |
+| expo-document-picker | Abrir o seletor de arquivos do sistema | Sim | Descartada. Abre o gerenciador de arquivos, não a galeria, o que é menos prático para escolher fotos. |
+| fetch global / expo/fetch | Fazer requisições HTTP | Sim, vem no pacote `expo` | **Escolhida.** É a implementação de fetch do próprio Expo (compatível com WinterCG) e, nas SDKs recentes, também é o `fetch` global no Android e no iOS. Não exige dependência extra. |  
+| axios | Biblioteca externa para requisições | Sim | Descartada. Seria uma dependência a mais sem benefício para uma única requisição. |
 
 ## Fontes oficiais lidas
 
@@ -41,16 +40,14 @@ Mesmo prompt enviado a duas ferramentas: Claude Code e Github copilot.
 - expo-camera: https://docs.expo.dev/versions/v58.0.0/sdk/camera/
 - expo-image-picker: https://docs.expo.dev/versions/v58.0.0/sdk/imagepicker/
 - expo/fetch: https://docs.expo.dev/versions/v58.0.0/sdk/expo/#expofetch-api
-- XMLHttpRequest e requisições no React Native: https://reactnative.dev/docs/network
 - axios: https://github.com/axios/axios
 
 ## Onde a IA errou
 
 Erro verificado:
 
-- Pedi uma tela que conseguisse pegar imagens ( ou da galeria ou da câmera), enviar para análise e uma miniatura da imagem escolhida. A IA entregou exatamente isso.
-- Ao testar no aparelho, percebi que não havia como remover a imagem selecionada. A falha estava na minha especificação, não na resposta, e virou um novo critério de aceitação.
-
+- Pedi uma tela que conseguisse pegar imagens ( ou da galeria ou da câmera), enviar para análise e uma miniatura da imagem escolhida. A IA entregou exatamente isso. Ao testar no aparelho, percebi que não havia como remover a imagem selecionada. A falha estava na minha especificação, não na resposta, e virou um novo critério de aceitação.
+- Pedi para quando uma requisição tiver uma falha explicasse qual foi a falha. Obitive que qualquer tipo de erro era por conta da API do Xiz9 estava fora do ar e mostrava a URL de acesso da API, mesmo no caso de ter desligado a internet do celular apareceu o erro falando que a API do Xiz9 estava fora do ar.
 ## Teste das condições: análise lenta e conexão com falha
 
 Cada situação foi testada no emulador, com o app rodando.

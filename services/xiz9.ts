@@ -33,9 +33,8 @@ export async function analisarImagem(uri: string): Promise<ResultadoXiz9> {
     if (controller.signal.aborted) {
       throw new Error(`Tempo esgotado: a análise passou de ${TEMPO_LIMITE_MS / 1000} s.`);
     }
-    throw new Error(
-      `Não foi possível conectar ao Xiz9 (${URL_ANALISE}). Verifique se a API está rodando.`
-    );
+    // A URL da API nunca vai para a tela.
+    throw new Error('Não foi possível conectar ao serviço do Xiz9.');
   } finally {
     clearTimeout(temporizador);
   }
